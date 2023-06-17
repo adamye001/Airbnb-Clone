@@ -1,27 +1,30 @@
-import Modal from "./components/modals/Modal";
-import Navbar from "./components/navbar/Navbar";
-import "./globals.css";
-import { Nunito } from "next/font/google";
+import RegisterModal from './components/modals/RegisterModal';
+import Navbar from './components/navbar/Navbar';
+import './globals.css';
+import { Nunito } from 'next/font/google';
+import ToasterProvider from './providers/ToasterProvider';
+import { Toaster } from 'react-hot-toast';
 
-const font = Nunito({ subsets: ["latin"] });
+const font = Nunito({ subsets: ['latin'] });
 
 export const metadata = {
-    title: "Airbnb",
-    description: "Airbnb clone",
+	title: 'Airbnb',
+	description: 'Airbnb clone',
 };
 
 export default function RootLayout({
-    children,
+	children,
 }: {
-    children: React.ReactNode;
+	children: React.ReactNode;
 }) {
-    return (
-        <html lang="en">
-            <body className={font.className}>
-                <Modal isOpen title="Hello World" />
-                <Navbar />
-                {children}
-            </body>
-        </html>
-    );
+	return (
+		<html lang='en'>
+			<body className={font.className}>
+				<Toaster />
+				<RegisterModal />
+				<Navbar />
+				{children}
+			</body>
+		</html>
+	);
 }
