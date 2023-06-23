@@ -1,6 +1,8 @@
 'use client';
 
 import { AiOutlineMenu } from 'react-icons/ai';
+import { useRouter } from 'next/navigation';
+import { signOut } from 'next-auth/react';
 import Avatar from '../Avatar';
 import { useCallback, useState } from 'react';
 import MenuItem from './MenuItem';
@@ -8,8 +10,6 @@ import MenuItem from './MenuItem';
 import useRegisterModal from '@/app/hooks/useRegisterModal';
 import useLoginModal from '@/app/hooks/useLoginModal';
 import useRentModal from '@/app/hooks/useRentModal';
-
-import { signOut } from 'next-auth/react';
 import { SafeUser } from '@/app/types';
 
 interface UserMenuProps {
@@ -17,6 +17,7 @@ interface UserMenuProps {
 }
 
 const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
+	const router = useRouter();
 	const registerModal = useRegisterModal();
 	const loginModal = useLoginModal();
 	const rentModal = useRentModal();
@@ -39,12 +40,14 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
 			<div className='flex flex-row items-center gap-3'>
 				<div
 					onClick={onRent}
-					className='hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer'>
+					className='hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer'
+				>
 					Airbnb your home
 				</div>
 				<div
 					onClick={toggleOpen}
-					className='p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition'>
+					className='p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition'
+				>
 					<AiOutlineMenu />
 					<div className='hidden md:block'>
 						<Avatar src={currentUser?.image} />
@@ -57,7 +60,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
 						{currentUser ? (
 							<>
 								<MenuItem
-									onClick={() => {}}
+									onClick={() => router.push('/trips')}
 									label='My trips'
 								/>
 								<MenuItem
@@ -65,7 +68,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
 									label='My favorites'
 								/>
 								<MenuItem
-									onClick={() => {}}
+									onClick={() => router.push('/reservations')}
 									label='My reservations'
 								/>
 								<MenuItem

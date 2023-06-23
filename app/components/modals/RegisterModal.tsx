@@ -39,7 +39,9 @@ const RegisterModal = () => {
 		axios
 			.post('/api/register', data)
 			.then(() => {
+				toast.success('Success!');
 				registerModal.onClose();
+				loginModal.onOpen();
 			})
 			.catch((error) => {
 				toast.error('Something went wrong.');
@@ -108,7 +110,8 @@ const RegisterModal = () => {
 					<div>Already have an Account?</div>
 					<div
 						className='text-neutral-800 cursor-pointer hover:underline'
-						onClick={toggle}>
+						onClick={toggle}
+					>
 						Log in
 					</div>
 				</div>
