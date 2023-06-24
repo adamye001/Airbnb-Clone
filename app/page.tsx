@@ -33,4 +33,5 @@ const Home: React.FC<HomeProps> = async ({ searchParams }: HomeProps) => {
 	);
 };
 
+export const dynamic = 'force-dynamic';
 export default Home;
