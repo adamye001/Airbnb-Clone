@@ -1,24 +1,59 @@
 # Airbnb Clone App
 
-This is an Airbnb clone project built using Next.js 13, React, Tailwind, Prisma,
-MongoDB, and NextAuth.
+This is a full-stack application built using Next.js 13, React, Tailwind,
+Prisma, MongoDB, and NextAuth.
 
 ## Features
 
-- User Authentication: Sign up, log in, and log out securely using NextAuth.
-  Support for authentication via GitHub and Google accounts.
-- Property Listings: Browse available properties listed on the platform.
-- Advanced Property Search: Search for properties based on various criteria such
-  as location, dates, and categories.
-- Property Details: View detailed information about each property, including
-  descriptions, photos, amenities, and availability.
-- Property Listing: Add your own properties to the platform's listings, allowing
-  others to book and enjoy your spaces.
-- Favorite Properties: Save your preferred properties to your personal favorites
-  list for easy access.
-- Property Reservation: Make reservations for properties you are interested in.
-- Manage Owned Properties: Have full control over your owned properties,
-  including editing details, availability, and pricing.
+- User Authentication:
+
+  - Sign up, log in, and log out securely using NextAuth with OAuth support for
+    authentication via GitHub and Google accounts.
+
+- Property Listings:
+
+  - Browse a wide range of available properties listed on the platform,
+    including apartments, houses, villas, and more.
+  - Get a comprehensive overview of each property, including descriptions,
+    photos, amenities, and pricing.
+
+- Advanced Property Search:
+
+  - Easily search for properties based on various criteria such as location,
+    dates, property type, amenities, and more.
+  - Refine your search results to find the perfect property that matches your
+    preferences.
+
+- Property Details:
+
+  - View detailed information about each property, including comprehensive
+    descriptions, high-quality photos, list of amenities, property rules, and
+    availability calendar.
+  - Get a clear understanding of what the property offers before making a
+    reservation.
+
+- Property Listing:
+
+  - List your own properties on the platform, showcasing all the essential
+    details and attractive photos to attract potential guests.
+  - Manage and update your property information, pricing, availability, and
+    property rules effortlessly.
+
+- Favorite Properties:
+
+  - Save your favorite properties to your personal favorites list for quick
+    access and comparison.
+  - Keep track of the properties you love and easily revisit them later.
+
+- Property Reservation:
+
+  - Make reservations for properties you are interested in, selecting the
+    desired dates and providing necessary information.
+  - Securely book the property and receive confirmation for your reservation.
+
+- Manage Owned Properties:
+  - Have full control over the properties you list.
+  - Stay organized and responsive to guest inquiries.
 
 ## Deployment
 
